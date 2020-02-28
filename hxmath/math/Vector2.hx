@@ -53,13 +53,13 @@ abstract Vector2(Vector2Type) from Vector2Type to Vector2Type
     public static var yAxis(get, never):Vector2;
     
     // Magnitude
-    public var length(get, never):Float;
+    public var length(get, set):Float;
     
     // Vector dotted with itself
     public var lengthSq(get, never):Float;
     
-    // The angle between this vector and the X axis
-    public var angle(get, never):Float;
+    // The angle between this vector and the X axis (in radians)
+    public var angle(get, set):Float;
     
     // The normalized vector
     public var normal(get, never):Vector2;
@@ -842,6 +842,21 @@ abstract Vector2(Vector2Type) from Vector2Type to Vector2Type
         var self:Vector2 = this;
         return self.clone()
             .rotateRight();
+    }
+
+    private inline function set_length(v:Float):Float
+    {
+        var self:Vector2 = this;
+        self.normalizeTo(v);
+        return v;
+    }
+
+    private inline function set_angle(v:Float):Float
+    {
+        var self:Vector2 = this;
+        var len = length;
+		self.set(len * Math.cos(v), len * Math.sin(v));
+		return v;
     }
 }
 
