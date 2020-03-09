@@ -14,10 +14,10 @@ typedef FlxPointShape =
 class Vector2Converter
 {
     /**
-     * Copy an FlxPoint/FlxVector to a Vector2.
+     * Copy a Vector2 to a FlxPoint/FlxVector.
      * 
-     * @param v     The Vector2.
-     * @param p     The FlxPoint/FlxVector to copy.
+     * @param v     The Vector2 to copy.
+     * @param p     The FlxPoint/FlxVector.
      */
     public static inline function copyToFlxPoint(v:Vector2, p:FlxPointShape):Void
     {
@@ -25,11 +25,11 @@ class Vector2Converter
         p.y = v.y;
     }
     
-    /**
-     * Copy a Vector2 to a FlxPoint/FlxVector.
+     /**
+     * Copy an FlxPoint/FlxVector to a Vector2.
      * 
-     * @param v     The Vector2 to copy.
-     * @param p     The FlxPoint/FlxVector.
+     * @param v     The Vector2.
+     * @param p     The FlxPoint/FlxVector to copy.
      */
     public static inline function copyFromFlxPoint(v:Vector2, p:FlxPointShape):Void
     {
