@@ -21,6 +21,8 @@ class TestAll
             runner.add(new Test3D());
             runner.add(new TestMathUtil());
             runner.add(new TestConverters());
+            runner.add(new TestFlixelConverters());
+            runner.add(new TestZerolibConverters());
             runner.add(new TestFrames());
             runner.add(new TestIntMath());
             runner.add(new TestGeom());
